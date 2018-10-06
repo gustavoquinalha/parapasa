@@ -2,7 +2,7 @@
 /*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 /*@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";*/
-/*@import "~@angular/material/prebuilt-themes/purple-green.css";*/
+/* @import "~@angular/material/prebuilt-themes/purple-green.css"; */
 
 html {
   margin: 0;
@@ -22,12 +22,16 @@ body {
 }
 
 .mat-form-field-label {
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .mat-card {
   background-color: #252839;
   height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  transition: .3s;
+  overflow: hidden;
 }
 
 .mat-card:hover {
@@ -39,32 +43,44 @@ body {
   color: #fff;
 
 }
-.box-space {
+
+.card {
+  min-height: 150px;
   flex-basis: 25%;
+  width: 25%;
+  min-width: 25%;
+  max-width: 25%;
   margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  display: inline-flex;
 }
 
 @media (max-width: 980px) {
-  .box-space {
+  .card {
     flex-basis: 33.3333%;
+    width: 3333%;
+    min-width: 33.33%;
+    max-width: 33.33%;
   }
 }
 
 @media (max-width: 720px) {
-  .box-space {
+  .card {
     flex-basis: 50%;
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
   }
 }
 
-@media (max-width: 480px) {
-  .box-space {
+@media (max-width: 520px) {
+  .card {
     flex-basis: 100%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
   }
-}
-
-.box-space {
-  padding: 5px;
-  box-sizing: border-box;
 }
 
 .menu {
@@ -73,4 +89,85 @@ body {
   padding: 20px;
   box-sizing: border-box;
   margin-bottom: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .1), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 1px 5px 0 rgba(0, 0, 0, .1)
+}
+
+.menu-relative {
+  position: relative;
+  height: 105px;
+}
+
+.menu form {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-card-title {
+  color: #b99cec;
+}
+
+.mat-card-subtitle {
+  opacity: .5;
+}
+
+.card-link {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: .3s;
+}
+
+.card:hover .card-link {
+  color: #fff;
+}
+
+.card:hover .mat-card-subtitle {
+  opacity: 1;
+}
+
+input {
+  color: #fff;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  color: #fff;
+}
+
+.flex-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 0 10px 0;
+}
+
+.github-link {
+  text-align: center;
+  margin: 20px;
+}
+
+.github-link .svg {
+  fill: #36394C;
+}
+
+.github-link .svg:hover {
+  fill: #515362;
+}
+
+.mat-card-avatar {
+  margin-right: 8px;
 }
